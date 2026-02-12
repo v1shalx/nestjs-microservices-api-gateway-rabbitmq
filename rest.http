@@ -1,0 +1,84 @@
+
+
+### Signup
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Forth",
+    "lastName": "User",
+    "email": "4th@gmail.com",
+    "password": "123"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+   "email": "2nd@gmail.com",
+    "password": "123"
+}
+
+
+
+### Profile
+GET http://localhost:3000/auth/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiMm5kQGdtYWlsLmNvbSIsImlhdCI6MTc3MDcxMTU3NywiZXhwIjoxNzcwNzE1MTc3fQ.g1V7HGF9LKvIWx8vvTX7NOzksOXTmvLqXeVJNfW4m1M
+
+
+
+
+
+
+### POST RIDER COORDINATES
+POST http://localhost:3000/riders/coordinates
+Content-Type: application/json
+
+{
+    "lat": 53399993.23,
+    "lng": 533333.23,
+    "rider": 2
+}
+
+### GET RIDER COORDINATES
+GET http://localhost:3000/riders/coordinates/2
+
+
+
+
+
+
+
+
+### SEED STOCK (one time)
+POST http://localhost:3000/stocks/seed
+Content-Type: application/json
+
+{
+  "items": [
+    { "sku": "SKU-1", "name": "Apple", "qty": 10 },
+    { "sku": "SKU-2", "name": "Banana", "qty": 5 }
+  ]
+}
+
+### GET STOCK
+GET http://localhost:3000/stocks/SKU-1
+
+
+### PLACE ORDER
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "userId": "2",
+  "userEmail": "2nd@gmail.com",
+  "items": [
+    { "sku": "SKU-1", "qty": 2 },
+    { "sku": "SKU-2", "qty": 1 }
+  ]
+}
+
+### GET ORDER (replace <ORDER_ID> with returned id)
+GET http://localhost:3000/orders/1bb8067b-6add-4819-84eb-831d066bd3f4
